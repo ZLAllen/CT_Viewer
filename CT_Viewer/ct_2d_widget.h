@@ -35,6 +35,7 @@ public:
     void setScrollBar(QScrollBar* scrollBar);
     vtkImageReslice* getReslice();
     ViewMode getViewMode();
+    vtkGenericOpenGLRenderWindow* getRenderWindow();
     vtkProp* addScrew(PlantingScrews* screw);
     void removeAll();
     void showOnlyCTReslice();

@@ -24,11 +24,11 @@ CT_Details_Widget::~CT_Details_Widget()
 {
 }
 
-void CT_Details_Widget::setTableContent(QMap<QString, QString>& content)
+void CT_Details_Widget::setTableContent(const QMap<QString, QString>& content)
 {
     ui.tableWidget->setRowCount(content.count());
     int i = 0;
-    QMap<QString, QString>::iterator iter = content.begin();
+    QMap<QString, QString>::const_iterator iter = content.begin();
     while (iter != content.end())
     {
         ui.tableWidget->setItem(i, 0, new QTableWidgetItem(iter.key()));

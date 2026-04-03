@@ -1,6 +1,7 @@
 #include "contrast_barchart_widget.h"
 #include <QPainter>
 #include <QDebug>
+#include <cmath>
 
 Contrast_Barchart_Widget::Contrast_Barchart_Widget(std::deque<int>* hist, int min_val, int max_val, QWidget* parent)
 {

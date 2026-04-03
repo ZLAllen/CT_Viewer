@@ -1,7 +1,7 @@
 #include "recent_image_list_widget_item.h"
 #include <QDateTime>
 
-RecentImageListWidgetItem::RecentImageListWidgetItem(ImageRegister* recentImageInfo, QIcon &icon, const QString &text, QListWidget *parent /*= nullptr*/, int type /*= Type*/)
+RecentImageListWidgetItem::RecentImageListWidgetItem(ImageRegister* recentImageInfo, const QIcon &icon, const QString &text, QListWidget *parent /*= nullptr*/, int type /*= Type*/)
     : QListWidgetItem(icon, text, parent, type)
 {
     this->recentImageInfo = recentImageInfo;

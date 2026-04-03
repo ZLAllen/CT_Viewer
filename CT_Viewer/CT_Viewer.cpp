@@ -1,11 +1,11 @@
 #include "CT_Viewer.h"
-#include <QFileDialog.h>
+#include <QFileDialog>
 #include <QDir>
 #include <QDebug>
 #include "vtkHelper.h"
 #include "uiHelper.h"
-#include <qpushbutton.h>
-#include <qmessagebox.h>
+#include <QPushButton>
+#include <QMessageBox>
 #include "ScrewOptionWidget.h"
 #include "ct_details_widget.h"
 #include "ct_contrast_widget.h"
@@ -330,10 +330,10 @@ void CT_Viewer::handleMeasurements()
 
 void CT_Viewer::updateViews()
 {
-    ui.mainViewWidget->GetRenderWindow()->Render();
-    ui.sagittalViewWidget->GetRenderWindow()->Render();
-    ui.coronalViewWidget->GetRenderWindow()->Render();
-    ui.axialViewWidget->GetRenderWindow()->Render();
+    ui.mainViewWidget->getRenderWindow()->Render();
+    ui.sagittalViewWidget->getRenderWindow()->Render();
+    ui.coronalViewWidget->getRenderWindow()->Render();
+    ui.axialViewWidget->getRenderWindow()->Render();
 }
 
 void CT_Viewer::updateColors(vtkBoxWidget* widget, double r, double g, double b)
@@ -538,9 +538,9 @@ void CT_Viewer::onScrewSliderChange(double value)
 // put this code in constructor will lead to an empty scene of 2D views
 void CT_Viewer::init2DViews()
 {
-    ui.axialViewWidget->GetRenderWindow()->Render();
-    ui.coronalViewWidget->GetRenderWindow()->Render();
-    ui.sagittalViewWidget->GetRenderWindow()->Render();
+    ui.axialViewWidget->getRenderWindow()->Render();
+    ui.coronalViewWidget->getRenderWindow()->Render();
+    ui.sagittalViewWidget->getRenderWindow()->Render();
 }
 
 void CT_Viewer::loadSliceAndThreshold(double* sliceCenter, int* contrastThreshold)
@@ -558,8 +558,8 @@ void CT_Viewer::loadSliceAndThreshold(double* sliceCenter, int* contrastThreshol
 
 void CT_Viewer::loadCameraSettings(double * cameraPos, double * focalPoint)
 {
-    this->ui.mainViewWidget->GetRenderWindow()->GetRenderers()->GetFirstRenderer()->GetActiveCamera()->SetPosition(cameraPos);
-    this->ui.mainViewWidget->GetRenderWindow()->GetRenderers()->GetFirstRenderer()->GetActiveCamera()->SetFocalPoint(focalPoint);
+    this->ui.mainViewWidget->getRenderWindow()->GetRenderers()->GetFirstRenderer()->GetActiveCamera()->SetPosition(cameraPos);
+    this->ui.mainViewWidget->getRenderWindow()->GetRenderers()->GetFirstRenderer()->GetActiveCamera()->SetFocalPoint(focalPoint);
 }
 
 void CT_Viewer::loadScrews(QVector<QPair<QString, QVector<double>>>& screwActorList)

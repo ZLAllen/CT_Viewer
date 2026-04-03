@@ -6,8 +6,8 @@
 #include <QMap>
 #include <QProgressDialog>
 
-void displayMetaInfo(Ui::CT_ViewerClass& ui, QMap<QString, QString>& map);
-QString displayDetails(QMap<QString, QString>& map);
+void displayMetaInfo(Ui::CT_ViewerClass& ui, const QMap<QString, QString>& map);
+QString displayDetails(const QMap<QString, QString>& map);
 QProgressDialog* createProgressDialog(QString title, QString prompt, int range);
 
 #endif

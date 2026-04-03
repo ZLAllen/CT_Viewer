@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ui_screwOptionWidget.h"
+#include "ui_ScrewOptionWidget.h"
 #include <QDialog>
 class ScrewOptionWidget : public QDialog
 {

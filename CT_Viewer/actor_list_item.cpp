@@ -73,7 +73,7 @@ void ActorListItem::onHideButtonToggled()
         if (this->widget != nullptr) {
             this->widget->SetEnabled(false);
         }
-        for each (auto actor in this->correspondingActors)
+        for (auto actor : this->correspondingActors)
         {
             actor->VisibilityOff();
         }
@@ -83,7 +83,7 @@ void ActorListItem::onHideButtonToggled()
         if (this->widget != nullptr) {
             this->widget->SetEnabled(true);
         }
-        for each (auto actor in this->correspondingActors)
+        for (auto actor : this->correspondingActors)
         {
             actor->VisibilityOn();
         }
@@ -99,7 +99,7 @@ void ActorListItem::onColorButtonClicked()
         QPixmap pixmap(16, 16);
         pixmap.fill(color);
         ui.colorButton->setIcon(pixmap);
-        for each (auto actor in this->correspondingActors)
+        for (auto actor : this->correspondingActors)
         {
             static_cast<vtkActor*>(actor)->GetProperty()->SetColor(color.red() / 256.0, color.green() / 256.0, color.blue() / 256.0);
         }
@@ -115,7 +115,7 @@ void ActorListItem::onDeleteButtonClicked()
         if (this->widget != nullptr) {
             this->widget->SetEnabled(false);
         }
-        for each (auto actor in this->correspondingActors)
+        for (auto actor : this->correspondingActors)
         {
             actor->VisibilityOff();
         }

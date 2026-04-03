@@ -28,7 +28,7 @@ CT_2d_Widget::CT_2d_Widget(QWidget *parent = Q_NULLPTR)
     win->SetSize(230, 180);
     win->SetMultiSamples(0);
     this->renWin = win;
-    this->SetRenderWindow(this->renWin);
+    this->setRenderWindow(this->renWin);
 
     // create the render and add it to the window
     vtkNew<vtkRenderer> render;
@@ -38,6 +38,11 @@ CT_2d_Widget::CT_2d_Widget(QWidget *parent = Q_NULLPTR)
 
 CT_2d_Widget::~CT_2d_Widget()
 {
+}
+
+vtkGenericOpenGLRenderWindow* CT_2d_Widget::getRenderWindow()
+{
+    return this->renWin;
 }
 
 void CT_2d_Widget::setViewMode(ViewMode mode)

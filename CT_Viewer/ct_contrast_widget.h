@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QWidget>
+#include <QIntValidator>
 #include "ui_ct_contrast_widget.h"
 #include "contrast_barchart_widget.h"
 #include <vtkSmartPointer.h>

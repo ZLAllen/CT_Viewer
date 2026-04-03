@@ -10,7 +10,7 @@ class CT_Details_Widget : public QWidget
 public:
     CT_Details_Widget(QWidget *parent = Q_NULLPTR);
     ~CT_Details_Widget();
-    void setTableContent(QMap<QString, QString>& content);
+    void setTableContent(const QMap<QString, QString>& content);
 
 private:
     Ui::Form ui;

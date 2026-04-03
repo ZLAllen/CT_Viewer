@@ -27,7 +27,7 @@ void BoxWidgetCallback::Execute(vtkObject* caller, unsigned long, void*)
     this->data->DeepCopy(filter->GetOutput());
     this->data->Modified();
     for (int i = 0; i < 3; i++) {
-        this->screw->getSliceWidget()[i]->GetRenderWindow()->Render();
+        this->screw->getSliceWidget()[i]->getRenderWindow()->Render();
     }
 
     // if the current active widget is the same, return

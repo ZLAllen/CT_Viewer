@@ -1,6 +1,6 @@
 #include "uiHelper.h"
 
-void displayMetaInfo(Ui::CT_ViewerClass & ui, QMap<QString, QString>& map)
+void displayMetaInfo(Ui::CT_ViewerClass & ui, const QMap<QString, QString>& map)
 {
     ui.name_label->setText(map["Patient Name"]);
     QString date = map["Instance Creation Date"];
@@ -9,9 +9,9 @@ void displayMetaInfo(Ui::CT_ViewerClass & ui, QMap<QString, QString>& map)
     ui.descrip_label->setText(map["Study Description"]);
 }
 
-QString displayDetails(QMap<QString, QString>& map)
+QString displayDetails(const QMap<QString, QString>& map)
 {
-    QMap<QString, QString>::iterator iter = map.begin();
+    QMap<QString, QString>::const_iterator iter = map.begin();
     QString details = "";
     while (iter != map.end()) {
         details.append(iter.key() + ": ");

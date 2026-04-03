@@ -55,7 +55,7 @@ CT_3d_Widget::CT_3d_Widget(QWidget *parent = Q_NULLPTR)
     win->SetSize(700, 370);
     win->SetMultiSamples(0);
     this->renWin = win;
-    this->SetRenderWindow(this->renWin);
+    this->setRenderWindow(this->renWin);
 
     // create the render
     vtkNew<vtkRenderer> render;
